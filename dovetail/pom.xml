@@ -1,0 +1,62 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.ing</groupId>
+	<artifactId>dovetail</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+	
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.4.RELEASE</version>
+	</parent>
+	
+	<modules>
+		<module>kafka2db</module>
+		<module>dovetail-common</module>
+		<module>csv2xml</module>
+		<module>xml2kafka</module>
+		<module>db2csv</module>
+	</modules>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<org.apache.kafka.version>2.0.0</org.apache.kafka.version>
+		<com.ing.dovetail.version>1.0.0</com.ing.dovetail.version>
+		<javax.xml.version>2.1</javax.xml.version>
+	</properties>
+	
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+			    <groupId>javax.xml</groupId>
+			    <artifactId>jaxb-api</artifactId>
+			    <version>${javax.xml.version}</version>
+			</dependency>
+			<dependency>
+			    <groupId>org.apache.kafka</groupId>
+			    <artifactId>kafka-clients</artifactId>
+			    <version>${org.apache.kafka.version}</version>
+			</dependency>
+			<dependency>
+			    <groupId>org.apache.kafka</groupId>
+			    <artifactId>kafka-clients</artifactId>
+			    <version>${org.apache.kafka.version}</version>
+			    <classifier>test</classifier>
+			</dependency>
+			<dependency>
+			    <groupId>org.apache.kafka</groupId>
+			    <artifactId>kafka_2.11</artifactId>
+			    <version>${org.apache.kafka.version}</version>
+			    <scope>test</scope>
+			</dependency>
+			<dependency>
+			    <groupId>com.ing</groupId>
+			    <artifactId>dovetail-common</artifactId>
+			    <version>${com.ing.dovetail.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>
